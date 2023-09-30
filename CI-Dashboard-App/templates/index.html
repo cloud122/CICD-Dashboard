@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CICD Dashboard</title>
+
+    <img src="static/assets/Banner.png" alt="Banner Image">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.js') }}"> </script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/tab-navigation.js') }}"> </script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/search.js') }}"> </script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/sort.js') }}"> </script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/refresh.js') }}"> </script>
+
+</head>
+<body>
+    <h1 class="title">CICD Dashboard</h1>
+    <!-- Create tabs -->
+    <input type="text" id="searchInput" placeholder="Search filter">
+    <ul class="nav nav-tabs" id="tableTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="table1-tab" data-toggle="tab" href="#table1" role="tab" aria-controls="table1" aria-selected="true">Test</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="table2-tab" data-toggle="tab" href="#table2" role="tab" aria-controls="table2" aria-selected="false">Preview</a>
+        </li>
+         <li class="nav-item" role="presentation">
+            <a class="nav-link" id="table3-tab" data-toggle="tab" href="#table3" role="tab" aria-controls="table3" aria-selected="false">Stage</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="table4-tab" data-toggle="tab" href="#table4" role="tab" aria-controls="table4" aria-selected="false">App</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="table5-tab" data-toggle="tab" href="#table5" role="tab" aria-controls="table5" aria-selected="false">Core</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="table6-tab" data-toggle="tab" href="#table6" role="tab" aria-controls="table6" aria-selected="false">EU</a>
+        </li>
+        <!-- Add more tabs for additional tables -->
+    </ul>
+    <!-- Tab content -->
+<div class="tab-content" id="tableTabsContent">
+    <div class="tab-pane fade show active" id="table1" role="tabpanel" aria-labelledby="table1-tab">
+        <table id="testtable1" class="table table-striped table-dark table-sm table-bordered sortable">
+                <thead>
+                    <tr>
+                        <th class="sortable">Repo Name &#x25b4;&#x25be; </th>
+                        <th class="sortable">Status &#x25b4;&#x25be; </th>
+                        <th class="sortable">branch &#x25b4;&#x25be; </th>
+                        <th class="sortable">Build Commit ID &#x25b4;&#x25be; </th> 
+                        <th class="sortable">Deploy Commit ID &#x25b4;&#x25be;</th>
+                        <th class="sortable">Last Deploy Time &#x25b4;&#x25be;</th>                                               
+                        <!-- Add more columns as needed -->      
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if items %}
+                        {% for item in items %}
+                            <tr>
+                            <td>{{ item['repo_name']['S'] }}</td>
+                            <td style="color: {% if item['status']['S'] == 'building' %}
+                                yellow
+                            {% elif item['status']['S'] == 'deployed' %}  
+                                green
+                            {% else %}
+                                yellow
+                            {% endif %}">
+                            {{ item['status']['S']|string }}</td>
+                            <td>{{ item['branch']['S'] }}</td>
+                            <td>{{ item['build_commit_id']['S'] }}</td>
+                            <td>{{ item['deploy_commit_id']['S'] }}</td>
+                            <td>{{ item['Last_time']['S'] }}</td>                            
+                                <!-- Access other columns similarly -->
+                            </tr>
+                        {% endfor %}
+                    {% else %}
+                        <tr>
+                            <tr>
+                                <td>VLClient</td>
+                                <td>Deployed</td>
+                                <td>master</td>                                     
+                                <td>fe45a3</td>
+                                <td>fe45a3</td>
+                                <td>10-01-22:12:02</td>
+                                <!-- Access other columns similarly -->
+                            </tr>
+                                                        <tr>
+                                <td>VLAdmin</td>
+                                <td>Deployed</td>
+                                <td>master</td>                                     
+                                <td>d245a3</td>
+                                <td>d245a3</td>
+                                <td>10-02-22:12:02</td>
+                                <!-- Access other columns similarly -->    
+                        <h2 style="color:#910707;" >No data available or unable to connect to DynamoDB. Displaying Dummy Data</h2>
+                        {% endif %}    
+                </tbody>  
+            </table>
+
+        </div>
+    <!-- Add more tab content sections for additional tables -->
+<div class="tab-content" id="tableTabsContent">
+    <div class="tab-pane fade " id="table2" role="tabpanel" aria-labelledby="table2-tab">
+            <table id="testtable2" class="table table-striped table-dark table-sm table-bordered">
+                <!-- Table 2 data -->
+                <thead>
+                    <tr>
+                        <th class="sortable">Repo Name &#x25b4;&#x25be; </th>
+                        <th class="sortable">Status &#x25b4;&#x25be; </th>
+                        <th class="sortable">branch &#x25b4;&#x25be; </th>
+                        <th class="sortable">Build Commit ID &#x25b4;&#x25be; </th> 
+                        <th class="sortable">Deploy Commit ID &#x25b4;&#x25be;</th>
+                        <th class="sortable">Last Deploy Time &#x25b4;&#x25be;</th>                                                 
+                        <!-- Add more columns as needed -->      
+                    </tr>
+                </thead>
+                <tbody>
+                        <tr>
+                            <tr>
+                                <td>VLClient</td>
+                                <td>Deployed</td>
+                                <td>master</td>                               
+                                <td>fe45a3</td>
+                                <td>fe45a3</td>
+                                <td>10-01-22:12:02</td>
+                                <!-- Access other columns similarly -->
+                            </tr>
+                            <tr>
+                                <td>VLAdmin</td>
+                                <td>Deployed</td>
+                                <td>master</td>                                     
+                                <td>c245a3</td>
+                                <td>c245a3</td>
+                                <td>10-02-22:12:02</td>
+                                <!-- Access other columns similarly -->
+
+                </tbody>    
+            </table>
+</div>
+</body>
+</html>

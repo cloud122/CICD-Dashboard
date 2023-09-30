@@ -1,0 +1,26 @@
+{
+  "Item1": {
+    "repo_name": {"S": "vlclient"},
+    "build_commit_id": {"S": "8df3141df"},
+    "deploy_commit_id": {"S": "8df3141df"},
+    "status": {"S": "deployed"},
+    "branch": {"S": "master"},
+    "Last_time": {"S": "10-02-23:12:22"}    
+  },
+  "Item2": {
+    "repo_name": {"S": "vladmin"},
+    "build_commit_id": {"S": "c1641df"},
+    "deploy_commit_id": {"S": "c1641df"},
+    "status": {"S": "building"},
+    "branch": {"S": "master"},
+    "Last_time": {"S": "10-01-23:12:11"}    
+  },
+  "Item3": {
+    "repo_name": {"S": "vlaccountingfeed"},
+    "build_commit_id": {"S": "a1641df"},
+    "deploy_commit_id": {"S": "a1641df"},
+    "status": {"S": "building"},
+    "branch": {"S": "master"},
+    "Last_time": {"S": "10-03-23:12:11"}    
+  }
+}

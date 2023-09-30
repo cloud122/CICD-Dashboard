@@ -1,0 +1,76 @@
+/* static/styles.css */
+/* Style for the search input */
+#searchInput {
+  width: 200px; /* Adjust the width as needed */
+  margin-right: 100px; /* Add right margin for spacing */
+  float: right; /* Float the search box to the right */
+  border: 1px solid #ccc; /* Add a border */
+  border-radius: 5px; /* Add rounded corners */
+  padding: 5px; /* Add padding for spacing */
+}
+/* Style for the title */
+
+.title {
+  font-family: 'Arial', sans-serif;
+  font-size: 28px;
+  color: #333; /* Text color */
+  text-align: center; /* Center-align the text */
+  background-color: #d7d7d7; /* Background color */
+  padding: 10px; /* Add some padding for spacing */
+  border-radius: 5px; /* Add rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #b7b7b7;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    font-size: 24px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    background-color: #b2afaf;
+}
+
+/* Style for the tab links */
+.nav-tabs .nav-item {
+  display: inline-block;
+  margin-right: 10px; /* Adjust spacing between tabs */
+}
+
+.nav-tabs .nav-link {
+  padding: 10px 20px; /* Adjust padding for tabs */
+  background-color: #3498db; /* Change the background color */
+  color: #fff; /* Text color */
+  border-radius: 5px; /* Add rounded corners */
+  text-decoration: none; /* Remove underlines */
+  transition: background-color 0.3s ease; /* Add a transition for hover effect */
+}
+
+.nav-tabs .nav-link.active {
+  background-color: #cadbe8; /* Change the background color for the active tab */
+}
+
+/* Hover effect */
+.nav-tabs .nav-link:hover {
+  background-color: #2980b9; /* Change the background color on hover */
+  color: #fff; /* Text color on hover */
+}
+
