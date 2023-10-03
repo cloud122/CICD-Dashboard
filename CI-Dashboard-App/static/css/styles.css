@@ -1,5 +1,16 @@
 /* static/styles.css */
 /* Style for the search input */
+
+.logo { object-fit: cover; }
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
 #searchInput {
   width: 200px; /* Adjust the width as needed */
   margin-right: 100px; /* Add right margin for spacing */
@@ -26,6 +37,8 @@ body {
     background-color: #b7b7b7;
     margin: 0;
     padding: 0;
+    width: 100%;
+    height: 100%;
 }
 
 h1 {
@@ -35,6 +48,7 @@ h1 {
 }
 
 table {
+
     width: 100%;
     border-collapse: collapse;
     background-color: #fff;
@@ -42,11 +56,13 @@ table {
 }
 
 th, td {
+
     padding: 10px;
     text-align: center;
     cursor: pointer;
     user-select: none;
     background-color: #b2afaf;
+    
 }
 
 /* Style for the tab links */

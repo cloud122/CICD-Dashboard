@@ -63,6 +63,10 @@ def get_dynamodb_data(table_name):
         # dummy_data = []
         return dummy_data
 
+@app.route('/healthcheck')
+def health_check():
+    return 'This node is healthy'
+
 @app.route('/')
 def index():
     # table = request.args.get('table')

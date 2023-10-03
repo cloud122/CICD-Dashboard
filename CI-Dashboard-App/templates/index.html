@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title>CICD Dashboard</title>
 
-    <img src="static/assets/Banner.png" alt="Banner Image">
+    <img src="static/assets/Banner.png" alt="Banner Image" width="100%">
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
 
@@ -139,5 +140,8 @@
                 </tbody>    
             </table>
 </div>
+    <div class="footer">
+    <p> This page refreshes every 5 minutes.</p>
+    </div>
 </body>
 </html>
